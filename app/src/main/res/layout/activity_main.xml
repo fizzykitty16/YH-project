@@ -9,9 +9,8 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="-61dp"
+        android:layout_width="419dp"
+        android:layout_height="138dp"
         android:background="#673AB7"
         android:elevation="6dp"
         android:minHeight="?attr/actionBarSize"
@@ -25,7 +24,6 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="-61dp"
         android:background="#673AB7"
         android:elevation="6dp"
         android:minHeight="?attr/actionBarSize"
@@ -41,6 +39,8 @@
         android:layout_height="fill_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tab_layout"
-        app:layout_constraintTop_toBottomOf="@+id/tab_layout" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.viewpager2.widget.ViewPager2>
 </androidx.constraintlayout.widget.ConstraintLayout>
