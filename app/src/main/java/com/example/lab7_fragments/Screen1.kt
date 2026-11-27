@@ -2,20 +2,14 @@ package com.example.lab7_fragments
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
-import android.widget.TextView
 import androidx.annotation.RequiresApi
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-//imports below are for code from AI prompt 1
-import androidx.core.os.bundleOf
-import androidx.fragment.app.setFragmentResult
-import androidx.fragment.app.setFragmentResultListener
 
 class Screen1 : Fragment() {
     lateinit var viewModel: MyViewModel
@@ -28,21 +22,16 @@ class Screen1 : Fragment() {
         } ?: throw Exception("Invalid Activity")
 
         val view = inflater.inflate(R.layout.screen1, container, false)
-        val valueView = view.findViewById<TextView>(R.id.textView)
         val datePicker = view.findViewById<DatePicker>(R.id.datePicker)
+        Log.d("Screen1", "DatePicker found: $datePicker")
 
-        //AI-assisted code block, from prompt 1
-        datePicker.setOnDateChangedListener {_, year, month, date ->
-            val selectedDate = "$date/${month + 1}/$year"
-            setFragmentResult("dateResult", bundleOf("selectedDate" to selectedDate))
+        //ai-assisted code block
+        datePicker.setOnDateChangedListener { _, year, month, dayOfMonth ->
+            val selectedDate = "$dayOfMonth/${month + 1}/$year" //update 'selectedDate' whenever new date selected
+            Log.d("Screen1", "changed to: $selectedDate") //recommended by AI to use temporary logs while debugging the dateValue TextView
+            viewModel.selectedDate.value = selectedDate //store in a LiveData object in viewModel for observer in Screen2 to read
         }
-        //end of AI-assisted code block
-
-        val valueObserver = Observer<String> { newValue ->
-            valueView.text = newValue.toString()
-        }
-        viewModel.value.observe(viewLifecycleOwner, valueObserver)
-
-        return view;
+        //end of the code block
+        return view
     }
 }

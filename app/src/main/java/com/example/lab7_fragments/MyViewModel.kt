@@ -4,12 +4,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MyViewModel : ViewModel() {
-    private val _value = MutableLiveData<String>()
+    val selectedDate = MutableLiveData<String>()
 
     val value: MutableLiveData<String>
-        get() = _value
+        get() = selectedDate
 
     init {
-        _value.value = "default"
+        selectedDate.value = "default"
     }
 }

@@ -8,6 +8,7 @@
     android:layout_height="match_parent">
 
     <!--date picker found at geeksforgeeks.org/android/datepicker-in-android/-->
+
     <DatePicker
         android:id="@+id/datePicker"
         android:layout_width="wrap_content"
@@ -16,17 +17,22 @@
         android:datePickerMode="spinner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.335" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="410dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="683dp"
-        android:text="Screen 1"
+    <Button
+        android:id="@+id/saveDateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="123dp"
+        android:layout_marginBottom="238dp"
+        android:text="Save Selected Date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/datePicker" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -41,6 +41,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
-    // for AI prompts 1-2:
-    implementation("androidx.fragment:fragment-ktx:1.9.1")
 }
