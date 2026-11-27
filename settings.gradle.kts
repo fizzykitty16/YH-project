@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Lab7-Fragments"
+rootProject.name = "YH-project"
 include(":app")
